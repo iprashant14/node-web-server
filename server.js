@@ -2,7 +2,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-const port = process.env.PORT || 1234 ;
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -51,6 +51,13 @@ app.get("/about",(req,res) => {
   res.render('about.hbs',{
     pageTitle : "About Page",
     currentYear : new Date().getFullYear()
+  });
+});
+
+app.get("/portfolio",(req,res) => {
+  res.render('portfolio.hbs',{
+    pageTitle : "Portfolio Page",
+    portfolioText : 'This is portfolio page'
   });
 });
 
